@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 """
 Created on Tue Nov 23 19:31:45 2021
 
@@ -10,7 +10,6 @@ import speech_recognition as sr #pip install speechRecognition
 import datetime
 import wikipedia #pip install wikipedi
 import webbrowser
-import os
 import smtplib
 
 engine = pyttsx3.init('sapi5')
@@ -27,15 +26,15 @@ def speak(audio):
 def wishMe():
     hour = int(datetime.datetime.now().hour)
     if hour>=0 and hour<12:
-        speak("Good Morning!")
+        speak("wish you very Good Morning vijay , harsh, nikhil ,shubrat sir!")
 
     elif hour>=12 and hour<18:
-        speak("Good Afternoon!")   
+        speak("wish you very Good Afternoon vijay, shubrat , nikhil , harsh sir!")   
 
     else:
-        speak("Good Evening!")  
+        speak("Good Evening vijay, shubrat , nikhi , harsh sir!")  
 
-    speak("I am Jarvis Sir. Please tell me how may I help you")       
+    speak("I am Jarvis vijay Sir. Please tell me how may I help you")       
 
 def takeCommand():
     #It takes microphone input from the user and returns string output
@@ -65,7 +64,7 @@ def sendEmail(to, content):
     server.sendmail('youremail@gmail.com', to, content)
     server.close()
 
-if __name__== "_main_":
+if __name__== "__main__":
     wishMe()
     while True:
     # if 1:
@@ -104,13 +103,13 @@ if __name__== "_main_":
             codePath = "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             os.startfile(codePath)
 
-        elif 'email to harry' in query:
+        elif 'email to vijay' in query:
             try:
                 speak("What should I say?")
                 content = takeCommand()
-                to = "harryyourEmail@gmail.com"    
+                to = "vijaykatareEmail@gmail.com"    
                 sendEmail(to, content)
                 speak("Email has been sent!")
             except Exception as e:
                 print(e)
-                speak("Sorry my friend harry bhai. I am not able to send this email")
+                speak("Sorry my friend vijay bhai. I am not able to send this email")
